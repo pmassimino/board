@@ -1,0 +1,60 @@
+
+<div class="row row-first text-light">    
+    <div class="col-xl-4 ">
+        <h1>Mercado Disponible</h1> 
+        <table class="table text-light">
+            <tr>
+                <td class="display-5">Soja</td>
+                <td class="display-5">{{pizarraDisponible.soja}}</td>
+            </tr>
+            <tr>
+                <td class="display-5">Maiz</td>
+                <td class="display-5">{{pizarraDisponible.maiz}}</td>
+            </tr>
+            <tr>
+                <td class="display-5">Trigo</td>
+                <td class="display-5">{{pizarraDisponible.trigo}}</td>
+            </tr>
+            <tr>
+                <td class="display-5">Sorgo</td>
+                <td class="display-5">{{pizarraDisponible.sorgo}}</td>
+            </tr>
+        </table> 
+    </div>
+    <div class="col-xl-4">  
+        <h1>Mercado Forward</h1> 
+        <table class="table text-light">            
+            <tr>
+                <td class="display-5">Soja</td>
+                <td class="display-5">{{pizarraForward.soja}}</td>
+            </tr>
+            <tr>
+                <td class="display-5">Maiz</td>
+                <td class="display-5">{{pizarraForward.maiz}}</td>
+            </tr>
+            <tr>
+                <td class="display-5">Trigo</td>
+                <td class="display-5">{{pizarraForward.trigo}}</td>
+            </tr>
+            <tr>
+                <td class="display-5">Sorgo</td>
+                <td class="display-5">{{pizarraForward.sorgo}}</td>
+            </tr>
+        </table> 
+    </div>   
+    <div class="col-xl-4">  
+        <h1 class="display-5">Divisas</h1> 
+        <app-divisa idMoneda="002"></app-divisa>
+    </div>     
+</div>
+<div class="row text-light">
+    <div class="col-xl-8">
+    <h1 class="display-4">El Tiempo</h1>   
+    <div id="tiempo"class="col-8 ">  
+       <app-el-tiempo></app-el-tiempo>
+    </div>
+    </div>
+    <div class="col-xl-4">  
+        
+    </div>
+</div>

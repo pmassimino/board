@@ -1,0 +1,26 @@
+<table class="text-light">
+    <tr style="height:15px">
+        <td style="width:60px;height:66px;font-size:0;" rowspan="3"><a href={{tiempoInfo.web}} target="_blank" [style.background]="'url(https://i5.tutiempo.net/wi/01/60/' + tiempoInfo.hour_hour.hour1.icon + '.png)'"  [style.width.px]="60" [style.height.px]="60" style="display:inline-block;background-repeat:no-repeat"></a></td>
+        <td style="width:74px;padding-left:5px;padding-right:5px;text-align:right;" rowspan="3"><span style="font-size:22px;"><strong>{{tiempoInfo.hour_hour.hour1.temperature}}°C</strong></span><br>{{tiempoInfo.hour_hour.hour1.wind}} km/h</td>
+        <td><span>Hoy</span></td>
+        <td><span>Mañana</span></td>
+        <td>{{getDayName(tiempoInfo.day3.date)}}</td>
+        <td>{{getDayName(tiempoInfo.day4.date)}}</td>
+        <td>{{getDayName(tiempoInfo.day5.date)}}</td>  
+    </tr>
+    <tr style="height:30px">            
+      <td style="width:62px;font-size:0;"><a href={{tiempoInfo.web}} target="_blank" [style.background]="'url(https://i5.tutiempo.net/wi/01/30/' + tiempoInfo.day1.icon + '.png)'"  [style.width.px]="30" [style.height.px]="30" style="display:inline-block;background-repeat:no-repeat"></a></td>
+      <td style="width:62px;font-size:0;" ><a href={{tiempoInfo.web}} target="_blank" [style.background]="'url(https://i5.tutiempo.net/wi/01/30/' + tiempoInfo.day2.icon + '.png)'"  [style.width.px]="30" [style.height.px]="30" style="display:inline-block;background-repeat:no-repeat"></a></td>
+      <td style="width:62px;font-size:0;" ><a href={{tiempoInfo.web}} target="_blank" [style.background]="'url(https://i5.tutiempo.net/wi/01/30/' + tiempoInfo.day3.icon + '.png)'"  [style.width.px]="30" [style.height.px]="30" style="display:inline-block;background-repeat:no-repeat"></a></td>
+      <td style="width:62px;font-size:0;" ><a href={{tiempoInfo.web}} target="_blank" [style.background]="'url(https://i5.tutiempo.net/wi/01/30/' + tiempoInfo.day4.icon + '.png)'"  [style.width.px]="30" [style.height.px]="30" style="display:inline-block;background-repeat:no-repeat"></a></td>
+      <td style="width:62px;font-size:0;" ><a href={{tiempoInfo.web}} target="_blank" [style.background]="'url(https://i5.tutiempo.net/wi/01/30/' + tiempoInfo.day5.icon + '.png)'"  [style.width.px]="30" [style.height.px]="30" style="display:inline-block;background-repeat:no-repeat"></a></td>            
+    </tr> 
+    <tr style="height:15px">
+      <td style="width:62px;"><span class="TxtMax" style="text-align:right; color:#E86F6F;">{{tiempoInfo.day1.temperature_max}}°</span><span class="DivMaxMin">|</span><span class="TxtMin" style="text-align:left; color:#71B9F0;">{{tiempoInfo.day1.temperature_min}}°</span></td>
+      <td style="width:62px;"><span class="TxtMax" style="text-align:right; color:#E86F6F;">{{tiempoInfo.day2.temperature_max}}°</span><span class="DivMaxMin">|</span><span class="TxtMin" style="text-align:left; color:#71B9F0;">{{tiempoInfo.day2.temperature_min}}°</span></td>
+      <td style="width:62px;"><span class="TxtMax" style="text-align:right; color:#E86F6F;">{{tiempoInfo.day3.temperature_max}}°</span><span class="DivMaxMin">|</span><span class="TxtMin" style="text-align:left; color:#71B9F0;">{{tiempoInfo.day3.temperature_min}}°</span></td>
+      <td style="width:62px;"><span class="TxtMax" style="text-align:right; color:#E86F6F;">{{tiempoInfo.day4.temperature_max}}°</span><span class="DivMaxMin">|</span><span class="TxtMin" style="text-align:left; color:#71B9F0;">{{tiempoInfo.day4.temperature_min}}°</span></td>
+      <td style="width:62px;"><span class="TxtMax" style="text-align:right; color:#E86F6F;">{{tiempoInfo.day5.temperature_max}}°</span><span class="DivMaxMin">|</span><span class="TxtMin" style="text-align:left; color:#71B9F0;">{{tiempoInfo.day5.temperature_min}}°</span></td>
+    </tr>   
+  </table>
+  <div class="text-light"><span class="Left"><a class="text-light" href="http://www.tutiempo.net" target="_blank" style="color:#000000;">© Tutiempo.net</a></span><span class="Right"><a href="https://www.tutiempo.net/leones.html" target="_blank" style="color:#000000;"><strong>»»»</strong></a></span></div>

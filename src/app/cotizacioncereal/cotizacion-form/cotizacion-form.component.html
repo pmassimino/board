@@ -1,0 +1,51 @@
+<div>
+    <h2>Pizarra Update</h2> 
+    <form  [formGroup]="form" (ngSubmit)="onSubmit()">   
+    <div class="form-group row">
+      <div class="col-xs-3 col-lg-3">
+      <label for="idMercado">Mercado</label>
+      <select class="form-control" formControlName = "idMercado" name="idMercado" [(value)]="pizarraData.id_mercado" (ngModelChange)="populatePizarra($event)" >
+         <option *ngFor="let item of mercado" [ngValue]="item.id" [selected]="pizarraData.id_mercado === item.id">{{item.nombre}} </option>
+      </select>   
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-xs-2 col-lg-2">
+           <label for="fecha">Fecha</label>
+           <input [(ngModel)]="pizarraData.fecha" class="form-control" formControlName = "fecha" id="fecha" [ngModel]="pizarraData.fecha | date:'yyyy-MM-dd'" placeholder="Fecha" type="date"  />      
+     </div>
+    </div>
+     <div class="form-group row">
+      <div class="col-xs-2 col-lg-2">
+           <label for="soja">Soja</label>
+           <input class="form-control" [(ngModel)]="pizarraData.soja" formControlName = "soja" id="soja" placeholder="Precio Soja"/>     
+     </div>
+    </div>    
+     <div class="form-group row">
+      <div class="col-xs-2 col-lg-2">
+           <label for="maiz">Maiz</label>
+           <input class="form-control" [(ngModel)]="pizarraData.maiz" id ="maiz" formControlName = "maiz" placeholder="Precio Maiz"/>     
+     </div>
+    </div>
+     <div class="form-group row">
+      <div class="col-xs-2 col-lg-2">
+           <label for="trigo">Trigo</label>
+           <input class="form-control" [(ngModel)]="pizarraData.trigo" id ="trigo" formControlName = "trigo" placeholder="Precio Trigo"/>     
+     </div>
+    </div>  
+     <div class="form-group row">
+      <div class="col-xs-2 col-lg-2">
+           <label for="sorgo">Sorgo</label>
+           <input class="form-control" [(ngModel)]="pizarraData.sorgo" id="sorgo" formControlName = "sorgo" placeholder="Precio Sorgo"/>     
+     </div>
+    </div>
+     <div class="form-group row">
+      <div class="col-xs-2 col-lg-2">
+           <label for="girasol">Girasol</label>
+           <input class="form-control" [(ngModel)]="pizarraData.girasol" id="girasol" formControlName = "girasol" placeholder="Precio Girasol"/>     
+     </div>
+     </div> 
+      <button class="btn btn-primary  mr-2" role="button" type="submit">Grabar</button>  
+      <a class="btn btn-primary"  role="button" href="/controlpanel">Cancelar</a>    
+  </form>
+  </div>

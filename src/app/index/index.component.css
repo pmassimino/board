@@ -1,0 +1,11 @@
+  
+.row-first {
+    height:60%;
+    overflow: hidden;
+  }
+.board{
+    background-color: #323232;
+    text-align: center;
+    padding: 0px;
+  }
+  
