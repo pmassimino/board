@@ -1,5 +1,6 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 import { CotizacionMoneda, PizarraMoneda } from '../core/models/model';
 import { CotizacionMonedaService } from '../core/services/cotizacion-moneda.service';
 
@@ -18,6 +19,9 @@ export class DivisaComponent implements OnInit {
 
   ngOnInit(): void {
     this.populate();
+    //Actualizar Cada 15 minutos   
+    const source = timer(1000, 900000);
+    source.subscribe(res=>this.populate());
   }
   populate():void
   {     

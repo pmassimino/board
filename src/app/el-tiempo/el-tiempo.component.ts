@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 import { ConfigService } from '../core/services/config.service';
 import { TiempoInfo } from '../models/model';
 import { TiempoService } from '../services/tiempo.service';
@@ -16,6 +17,9 @@ export class ElTiempoComponent implements OnInit {
   
   ngOnInit(): void {
     this.populate();
+    //Actualizar Cada 15 minutos   
+    const source = timer(1000, 900000);
+    source.subscribe(res=>this.populate());
   }
 
   populate()

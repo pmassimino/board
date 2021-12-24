@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 import { CotizacionMoneda, PizarraMoneda } from '../core/models/model';
 import { ConfigService } from '../core/services/config.service';
 import { CotizacionMonedaService } from '../core/services/cotizacion-moneda.service';
@@ -25,8 +26,10 @@ export class IndexComponent implements OnInit {
   
   ngOnInit(): void
   {
-    this.populate();    
-    
+    this.populate(); 
+    //Actualizar Cada un minuto   
+    const source = timer(1000, 60000);
+    source.subscribe(res=>this.populate());
   }
  
   populate()
@@ -46,10 +49,15 @@ export class IndexComponent implements OnInit {
   {  
      let result:PizarraCereal=new PizarraCereal();     
      result.soja = data.find(d=>d.idCereal=="23")?.precio ||0;
+     result.sojaObs = data.find(d=>d.idCereal=="23")?.obs ||"";
      result.maiz = data.find(d=>d.idCereal=="19")?.precio ||0;
+     result.maizObs = data.find(d=>d.idCereal=="19")?.obs ||"";
      result.sorgo = data.find(d=>d.idCereal=="22")?.precio ||0;
+     result.sorgoObs = data.find(d=>d.idCereal=="22")?.obs ||"";
      result.girasol = data.find(d=>d.idCereal=="02")?.precio ||0;
+     result.girasolObs = data.find(d=>d.idCereal=="02")?.obs ||"";
      result.trigo = data.find(d=>d.idCereal=="15")?.precio ||0;
+     result.trigoObs = data.find(d=>d.idCereal=="15")?.obs ||"";
      return result;
   }
   

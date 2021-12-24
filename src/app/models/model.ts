@@ -18,6 +18,11 @@ export class PizarraCereal
   maiz:number;
   sorgo:number;
   girasol:number;
+  sojaObs:string;
+  trigoObs:string;
+  maizObs:string;
+  sorgoObs:string;
+  girasolObs:string;
 }
 
 export class Cereal {

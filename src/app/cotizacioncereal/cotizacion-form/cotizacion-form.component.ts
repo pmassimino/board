@@ -56,16 +56,26 @@ export class CotizacionFormComponent implements OnInit {
       maiz: new FormControl(this.pizarraData.maiz,Validators.min(0)),
       trigo: new FormControl(this.pizarraData.trigo,Validators.min(0)),
       sorgo: new FormControl(this.pizarraData.sorgo,Validators.min(0)),
-      girasol: new FormControl(this.pizarraData.girasol,Validators.min(0))});      
+      girasol: new FormControl(this.pizarraData.girasol),
+      sojaObs: new FormControl(this.pizarraData.sojaObs),
+      maizObs: new FormControl(this.pizarraData.maizObs),
+      trigoObs: new FormControl(this.pizarraData.trigoObs),
+      sorgoObs: new FormControl(this.pizarraData.sorgoObs),
+      girasolObs: new FormControl(this.pizarraData.girasolObs)});      
   }   
   
   transformData(data:CotizacionCereal[])
   {       
      this.pizarraData.soja = data.find(d=>d.idCereal=="23")?.precio ||0;
+     this.pizarraData.sojaObs = data.find(d=>d.idCereal=="23")?.obs ||"";
      this.pizarraData.maiz = data.find(d=>d.idCereal=="19")?.precio ||0;
+     this.pizarraData.maizObs = data.find(d=>d.idCereal=="19")?.obs ||"";
      this.pizarraData.sorgo = data.find(d=>d.idCereal=="22")?.precio ||0;
+     this.pizarraData.sorgoObs = data.find(d=>d.idCereal=="22")?.obs ||"";
      this.pizarraData.girasol = data.find(d=>d.idCereal=="02")?.precio ||0;
+     this.pizarraData.girasolObs = data.find(d=>d.idCereal=="02")?.obs ||"";
      this.pizarraData.trigo = data.find(d=>d.idCereal=="15")?.precio ||0;
+     this.pizarraData.trigoObs = data.find(d=>d.idCereal=="15")?.obs ||"";
   }
   onSubmit(){
     var cotizacion:CotizacionCereal = new CotizacionCereal();
@@ -76,6 +86,7 @@ export class CotizacionFormComponent implements OnInit {
     cotizacion.idMoneda = "PES";
     cotizacion.precio = this.form.value.soja;
     cotizacion.fecha = this.form.value.fecha;
+    cotizacion.obs = this.form.value.sojaObs;
     this.service.add(cotizacion).subscribe();
 //Maiz
     cotizacion = new CotizacionCereal();    
@@ -84,6 +95,7 @@ export class CotizacionFormComponent implements OnInit {
     cotizacion.idMoneda = "PES";
     cotizacion.precio = this.form.value.maiz;
     cotizacion.fecha = this.form.value.fecha;
+    cotizacion.obs = this.form.value.maizObs;
     this.service.add(cotizacion).subscribe();
     //Trigo
     cotizacion = new CotizacionCereal();
@@ -93,6 +105,7 @@ export class CotizacionFormComponent implements OnInit {
     cotizacion.idMoneda = "PES";
     cotizacion.precio = this.form.value.trigo;
     cotizacion.fecha = this.form.value.fecha;
+    cotizacion.obs = this.form.value.trigoObs;
     this.service.add(cotizacion).subscribe();
     //girasol
     cotizacion = new CotizacionCereal();
@@ -101,6 +114,7 @@ export class CotizacionFormComponent implements OnInit {
     cotizacion.idMoneda = "PES";
     cotizacion.precio = this.form.value.girasol;
     cotizacion.fecha = this.form.value.fecha;
+    cotizacion.obs = this.form.value.girasolObs;
     this.service.add(cotizacion).subscribe();
     //sorgo
     cotizacion = new CotizacionCereal();
@@ -109,6 +123,7 @@ export class CotizacionFormComponent implements OnInit {
     cotizacion.idMoneda = "PES";
     cotizacion.precio = this.form.value.sorgo;
     cotizacion.fecha = this.form.value.fecha;
+    cotizacion.obs = this.form.value.sorgoObs;
     this.service.add(cotizacion).subscribe();
   }
 
