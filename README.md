@@ -1,6 +1,6 @@
 # Board
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
+Board is an application that allows you to display commodity quotes, weather data and currency quotes, it is generally implemented on LED TV to show cereals are traded somewhere. The app depends on a backend of any technology which must offer the data in json format.
 
 ## Development server
 
@@ -25,3 +25,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Screen Shot
+![image](https://user-images.githubusercontent.com/1976381/147357812-5965427e-0f70-4dc8-bb92-3065ba76337a.png)
