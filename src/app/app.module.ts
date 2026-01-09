@@ -22,8 +22,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 import { ElTiempoComponent } from './el-tiempo/el-tiempo.component';
 import { DivisaComponent } from './divisa/divisa.component';
+import { PostListComponent } from './post/post-list/post-list.component';
+import { PostFormComponent } from './post/post-form/post-form.component';
+import { PostShowComponent } from './post-show/post-show.component';
 
 export function initializeApp(appConfig: ConfigService) {
   return () => appConfig.load();
@@ -35,7 +41,7 @@ export function initializeApp(appConfig: ConfigService) {
     CotizacionFormComponent,
     LoginComponent,
     IndexComponent,   
-    ControlPanelComponent, LayoutAppComponent, LayoutLoginComponent, LayoutMainComponent, ElTiempoComponent, DivisaComponent
+    ControlPanelComponent, LayoutAppComponent, LayoutLoginComponent, LayoutMainComponent, ElTiempoComponent, DivisaComponent, PostListComponent, PostFormComponent,PostShowComponent
   ],
   imports: [BrowserModule,
     HttpClientModule, 
@@ -48,8 +54,11 @@ export function initializeApp(appConfig: ConfigService) {
     MatIconModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatInputModule                
-    
+    MatInputModule ,               
+    BrowserAnimationsModule, 
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,    
   ],
   providers: [AuthService,
     AuthGuard ,

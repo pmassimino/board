@@ -34,6 +34,16 @@ export class Mercado {
     nombre: string;
 }
 
+export class Post {
+        id: number;        
+        name: string;
+        title: string;
+        content: string;
+        status: string;    
+    }
+ export const statusPost: string[] = ["Borrador", "Publicado", "Archivado"];
+    
+
 
 
 export interface Information {

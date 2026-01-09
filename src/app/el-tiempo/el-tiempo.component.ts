@@ -35,7 +35,7 @@ export class ElTiempoComponent implements OnInit {
   {
     var days = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado','Domingo'];
     var d = new Date(dateString);
-    var dayName = days[d.getDay()];
+    var dayName = days[d.getDay() - 1] ;
     return dayName;
   }
 

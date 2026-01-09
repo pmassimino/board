@@ -15,7 +15,15 @@
             <tr>
                 <td class="display-6">Trigo</td>
                 <td class="display-6">{{pizarraDisponible.trigo}}</td>
-            </tr>            
+            </tr>        
+            <tr>
+                <td class="display-6">Sorgo</td>
+                <td class="display-6">{{pizarraDisponible.sorgo}}</td>
+            </tr>     
+            <tr>
+                <td class="display-6">Girasol</td>
+                <td class="display-6">{{pizarraDisponible.girasol}}</td>
+            </tr>           
         </table> 
     </div>
     <div class="col-xl-7">  
@@ -36,6 +44,16 @@
                 <td class="display-6">U$S {{pizarraForward.trigo}}</td>
                 <td class="display-6">{{pizarraForward.trigoObs}}</td>
             </tr>            
+            <tr>
+                <td class="display-6">Sorgo</td>
+                <td class="display-6">U$S {{pizarraForward.sorgo}}</td>
+                <td class="display-6">{{pizarraForward.sorgoObs}}</td>
+            </tr> 
+            <tr>
+                <td class="display-6">Girasol</td>
+                <td class="display-6">U$S {{pizarraForward.girasol}}</td>
+                <td class="display-6">{{pizarraForward.girasolObs}}</td>
+            </tr>                       
         </table> 
     </div>  
          
@@ -44,9 +62,10 @@
     <div class="col-xl-5">
         <h1 class="display-4">El Tiempo</h1>   
         <div id="tiempo"class="col-8 ">  
-           <app-el-tiempo></app-el-tiempo>
+           <app-el-tiempo></app-el-tiempo>          
         </div>
-        </div>    
+        <app-post-show></app-post-show>       
+    </div>    
     <div class="col-xl-7">  
         <h1 class="display-6">Divisas</h1> 
         <app-divisa idMoneda="002"></app-divisa>

@@ -1,6 +1,6 @@
 {
-    "apiUrl": "https://sever.com/api" ,
+    "apiUrl": "https://localhost:44340/api" ,
     "apiUrlGlobal": "http://sever.com/api" ,
     "apiId":"4CGaXaqzaqzaO52",
-    "idLocalidad":"43182"      
+    "idLocalidad":"43122"      
 }

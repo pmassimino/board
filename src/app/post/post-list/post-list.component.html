@@ -1,0 +1,62 @@
+<div>
+  <label>Post</label>
+  <div toolbar>
+    <div (addNew)="addNew()" (findByName)="findByName($event)">
+      <a (click)="addNew()">Nuevo</a>>
+    </div>
+  </div>
+  <div>
+    <mat-table class="table-compact" [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="Id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+        <mat-cell class="mat-cell-sm" *matCellDef="let item">{{ item.id }}</mat-cell>
+        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</mat-header-cell>
+        <mat-cell class="mat-cell-sm" *matCellDef="let item">{{ item.name }}</mat-cell>
+        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Title">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Titulo</mat-header-cell>
+        <mat-cell class="mat-cell-sm" *matCellDef="let item">{{ item.title }}</mat-cell>
+        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Status">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Estado</mat-header-cell>
+        <mat-cell class="mat-cell-sm" *matCellDef="let item">{{ item.status }}</mat-cell>
+        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+      </ng-container>
+
+      <!-- Edit Column -->
+      <ng-container matColumnDef="Edit">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell class="mat-cell-sm" *matCellDef="let item">
+          <a [routerLink]="['/post/', item.id]">
+            <i class="material-icons">mode_edit</i>
+          </a>
+        </mat-cell>
+        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+      </ng-container>
+
+      <!-- Delete Column -->
+      <ng-container matColumnDef="Delete">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell class="mat-cell-sm" *matCellDef="let item">
+          <button (click)="onDelete(item.id)">
+            <i class="material-icons">delete</i>
+          </button>
+        </mat-cell>
+        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <mat-footer-row *matFooterRowDef="displayedColumns"></mat-footer-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[15, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
